@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <View
@@ -15,7 +16,7 @@
         android:layout_height="match_parent"
         android:background="@android:color/white"
         android:padding="20dp"
-        android:paddingBottom="16dp"
+        android:paddingBottom="10dp"
         android:paddingStart="26dp"
         android:paddingEnd="26dp"
         android:orientation="vertical">
@@ -26,12 +27,13 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <ImageView
+            <com.zeoflow.material.elements.imageview.ShapeableImageView
                 android:id="@+id/bottomDialog_icon"
                 android:visibility="gone"
                 android:layout_width="42dp"
                 android:layout_height="42dp"
-                android:layout_marginRight="20dp" />
+                android:layout_marginEnd="20dp" />
+
             <TextView
                 android:id="@+id/bottomDialog_title"
                 android:layout_width="wrap_content"
@@ -72,23 +74,37 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:gravity="center_vertical|end"
-            android:orientation="horizontal">
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/bottomDialog_cancel"
-                android:visibility="gone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/Button.Flat"
-                android:text="@android:string/cancel"/>
-            <Button
+            <com.zeoflow.material.elements.button.MaterialButton
                 android:id="@+id/bottomDialog_ok"
-                android:visibility="gone"
-                android:layout_width="wrap_content"
+                style="@style/MaterialElements.Button.TextButton"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/Button"
-                android:text="@android:string/ok"/>
+                android:text="@android:string/ok"
+                android:textColor="#ffffff"
+                android:visibility="gone"
+                app:backgroundTint="#8BC34A"
+                app:mbFontFamily="@font/bottom_dialogs_def"
+                app:textAllCaps="false"
+                app:rippleColor="#468005" />
+
+            <com.zeoflow.material.elements.button.MaterialButton
+                android:id="@+id/bottomDialog_cancel"
+                style="@style/MaterialElements.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@android:string/cancel"
+                android:textColor="#F44336"
+                android:visibility="gone"
+                android:layout_marginTop="-5dp"
+                app:strokeColor="#F44336"
+                app:backgroundTint="#ffffff"
+                app:strokeWidth="2dp"
+                app:mbFontFamily="@font/bottom_dialogs_def"
+                app:textAllCaps="false"
+                app:rippleColor="#F8A39D" />
 
         </LinearLayout>
 

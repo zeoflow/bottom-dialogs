@@ -39,23 +39,28 @@ import androidx.annotation.UiThread;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 
+import com.zeoflow.material.elements.button.MaterialButton;
+import com.zeoflow.material.elements.imageview.ShapeableImageView;
+
+import java.util.Objects;
+
 public class BottomDialog
 {
 
     protected final Builder mBuilder;
-    protected ImageView vIcon;
+    protected ShapeableImageView vIcon;
     protected TextView vTitle;
     protected TextView vContent;
     protected FrameLayout vCustomView;
-    protected Button vNegative;
-    protected Button vPositive;
+    protected MaterialButton vNegative;
+    protected MaterialButton vPositive;
 
     public final Builder getBuilder()
     {
         return mBuilder;
     }
 
-    public final ImageView getIconImageView()
+    public final ShapeableImageView getIconImageView()
     {
         return vIcon;
     }
@@ -70,12 +75,12 @@ public class BottomDialog
         return vContent;
     }
 
-    public final Button getNegativeButton()
+    public final MaterialButton getNegativeButton()
     {
         return vNegative;
     }
 
-    public final Button getPositiveButton()
+    public final MaterialButton getPositiveButton()
     {
         return vPositive;
     }
@@ -106,12 +111,12 @@ public class BottomDialog
         final Dialog bottomDialog = new Dialog(builder.context, R.style.BottomDialogs);
         View view = LayoutInflater.from(builder.context).inflate(R.layout.library_bottom_dialog, null);
 
-        vIcon = (ImageView) view.findViewById(R.id.bottomDialog_icon);
-        vTitle = (TextView) view.findViewById(R.id.bottomDialog_title);
-        vContent = (TextView) view.findViewById(R.id.bottomDialog_content);
-        vCustomView = (FrameLayout) view.findViewById(R.id.bottomDialog_custom_view);
-        vNegative = (Button) view.findViewById(R.id.bottomDialog_cancel);
-        vPositive = (Button) view.findViewById(R.id.bottomDialog_ok);
+        vIcon = view.findViewById(R.id.bottomDialog_icon);
+        vTitle = view.findViewById(R.id.bottomDialog_title);
+        vContent = view.findViewById(R.id.bottomDialog_content);
+        vCustomView = view.findViewById(R.id.bottomDialog_custom_view);
+        vNegative = view.findViewById(R.id.bottomDialog_cancel);
+        vPositive = view.findViewById(R.id.bottomDialog_ok);
 
         if (builder.icon != null)
         {
@@ -158,23 +163,23 @@ public class BottomDialog
                 vPositive.setTextColor(builder.btn_colorPositive);
             }
 
-            if (builder.btn_colorPositiveBackground == 0)
-            {
-                TypedValue v = new TypedValue();
-                boolean hasColorPrimary = builder.context.getTheme().resolveAttribute(R.attr.colorPrimary, v, true);
-                builder.btn_colorPositiveBackground = !hasColorPrimary ? v.data : ContextCompat.getColor(builder.context, R.color.colorPrimary);
-            }
-
-            Drawable buttonBackground = UtilsLibrary.createButtonBackgroundDrawable(builder.context, builder.btn_colorPositiveBackground);
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
-            {
-                vPositive.setBackground(buttonBackground);
-            } else
-            {
-                // noinspection deprecation
-                vPositive.setBackgroundDrawable(buttonBackground);
-            }
+//            if (builder.btn_colorPositiveBackground == 0)
+//            {
+//                TypedValue v = new TypedValue();
+//                boolean hasColorPrimary = builder.context.getTheme().resolveAttribute(R.attr.colorPrimary, v, true);
+//                builder.btn_colorPositiveBackground = !hasColorPrimary ? v.data : ContextCompat.getColor(builder.context, R.color.colorPrimary);
+//            }
+//
+//            Drawable buttonBackground = UtilsLibrary.createButtonBackgroundDrawable(builder.context, builder.btn_colorPositiveBackground);
+//
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
+//            {
+//                vPositive.setBackground(buttonBackground);
+//            } else
+//            {
+//                // noinspection deprecation
+//                vPositive.setBackgroundDrawable(buttonBackground);
+//            }
         }
 
         if (builder.btn_negative != null)
@@ -201,7 +206,7 @@ public class BottomDialog
 
         bottomDialog.setContentView(view);
         bottomDialog.setCancelable(builder.isCancelable);
-        bottomDialog.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        Objects.requireNonNull(bottomDialog.getWindow()).setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         bottomDialog.getWindow().setGravity(Gravity.BOTTOM);
 
         return bottomDialog;
