@@ -12,7 +12,7 @@
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="3dp"
         android:background="@drawable/top_sliding_bar"
-        android:backgroundTint="@android:color/white" />
+        android:backgroundTint="@color/colorBackgroundLvl2" />
 
     <View
         android:id="@+id/shadow"
@@ -26,7 +26,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:background="@drawable/bottom_dialog_background"
-        android:backgroundTint="#fff"
+        android:backgroundTint="@color/colorBackgroundLvl2"
         android:orientation="vertical"
         android:padding="20dp"
         android:paddingStart="26dp"
@@ -51,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.8"
-                android:textColor="@android:color/black"
+                android:textColor="@color/colorTextLvl1"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -64,11 +64,11 @@
 
             <TextView
                 android:id="@+id/bottomDialog_content"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
                 android:textAlignment="center"
-                android:textColor="@android:color/black"
+                android:textColor="@color/colorTextLvl2"
                 android:textSize="16sp" />
 
         </LinearLayout>
@@ -97,11 +97,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@android:string/ok"
-                android:textColor="#ffffff"
                 android:visibility="gone"
-                app:backgroundTint="#4CAF50"
+                android:textColor="@color/okTxtColor"
+                app:backgroundTint="@color/okBackgroundTint"
                 app:mbFontFamily="@font/bottom_dialogs_def"
-                app:rippleColor="#066C0A"
+                app:rippleColor="@color/okRippleColor"
                 app:textAllCaps="false" />
 
             <com.zeoflow.material.elements.button.MaterialButton
@@ -111,12 +111,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-5dp"
                 android:text="@android:string/cancel"
-                android:textColor="#F44336"
                 android:visibility="gone"
-                app:backgroundTint="#ffffff"
+                android:textColor="@color/cancelTxtColor"
+                app:backgroundTint="@color/colorBackgroundLvl3"
                 app:mbFontFamily="@font/bottom_dialogs_def"
-                app:rippleColor="#F8A39D"
-                app:strokeColor="#F44336"
+                app:rippleColor="@color/cancelRippleColor"
+                app:strokeColor="@color/cancelStrokeColor"
                 app:strokeWidth="2dp"
                 app:textAllCaps="false" />
 
