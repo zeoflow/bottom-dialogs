@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/top_sliding_bar"
+        android:backgroundTint="@color/colorBackgroundLvl2" />
+
+    <View
+        android:id="@+id/shadow"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/shadow" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/bottom_dialog_background"
+        android:backgroundTint="@color/colorBackgroundLvl2"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:paddingStart="26dp"
+        android:paddingEnd="26dp"
+        android:paddingBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.zeoflow.material.elements.imageview.ShapeableImageView
+                android:id="@+id/bottomDialog_icon"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginBottom="10dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/bottomDialog_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.8"
+                android:textColor="@color/colorTextLvl1"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/bottomDialog_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alpha="0.7"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextLvl2"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/bottomDialog_custom_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.zeoflow.material.elements.button.MaterialButton
+                android:id="@+id/bottomDialog_ok"
+                style="@style/MaterialElements.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@android:string/ok"
+                android:visibility="gone"
+                android:textColor="@color/okTxtColor"
+                app:backgroundTint="@color/okBackgroundTint"
+                app:mbFontFamily="@font/bottom_dialogs_def"
+                app:rippleColor="@color/okRippleColor"
+                app:textAllCaps="false" />
+
+            <com.zeoflow.material.elements.button.MaterialButton
+                android:id="@+id/bottomDialog_cancel"
+                style="@style/MaterialElements.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-5dp"
+                android:text="@android:string/cancel"
+                android:visibility="gone"
+                android:textColor="@color/cancelTxtColor"
+                app:backgroundTint="@color/colorBackgroundLvl3"
+                app:mbFontFamily="@font/bottom_dialogs_def"
+                app:rippleColor="@color/cancelRippleColor"
+                app:strokeColor="@color/cancelStrokeColor"
+                app:strokeWidth="2dp"
+                app:textAllCaps="false" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorBackground">#000000</color>
+    <color name="colorBackgroundLvl2">#111111</color>
+    <color name="colorBackgroundLvl3">#1F1F1F</color>
+    <color name="colorBackgroundT">#80000000</color>
+    <color name="colorAccent">#ffffff</color>
+    <color name="colorTextLvl1">#ffffff</color>
+    <color name="colorTextLvl2">#F0F0F0</color>
+    <color name="colorTextLvl3">#CFCFCF</color>
+    <color name="colorTextLvl4">#B8B8B8</color>
+    <color name="colorRipple">#474747</color>
+    <color name="colorTransparentAccent">#B3FFFFFF</color>
+
+    <color name="okTxtColor">#2B2B2B</color>
+    <color name="okBackgroundTint">#4CAF50</color>
+    <color name="okRippleColor">#0A6A0E</color>
+
+    <color name="cancelTxtColor">#F44336</color>
+    <color name="cancelBackgroundTint">#ffffff</color>
+    <color name="cancelRippleColor">#780800</color>
+    <color name="cancelStrokeColor">#F44336</color>
+
+</resources>
