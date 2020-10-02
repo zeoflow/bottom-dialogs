@@ -36,7 +36,13 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        new BottomDialog.Builder(this)
+            .setTitle("Awesome!")
+            .setIcon(ContextCompat.getDrawable(this, R.drawable.ic_github))
+            .setContent("Glad to see you like BottomDialogs! If you're up for it, we would really appreciate you reviewing us.")
+            .setPositiveText("Google Play")
+            .setNegativeText("Close")
+            .show();
     }
 
     public void sample(View view)
