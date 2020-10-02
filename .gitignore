@@ -1,0 +1,8 @@
+.gradle
+.idea
+gradle
+build
+release
+*.iml
+gradlew*
+password-strength/password_strength.gpg
