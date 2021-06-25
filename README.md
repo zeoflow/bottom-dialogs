@@ -1,4 +1,6 @@
-# Bottom Dialogs for Android
+# Bottom Dialogs for Android (Archived)
+
+## For bottom-dialogs check [material-elements](https://github.com/zeoflow/material-elements)
 
 ## Intro
 An Android Library that shows on the bottom of the screen a fully
